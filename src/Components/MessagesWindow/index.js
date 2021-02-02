@@ -34,7 +34,7 @@ const MessagesWindow = () => {
 
     const listMessages = () => {
         return messages.map((m, idx) => {
-            return <Message message={m.message} isPublic={m.isPublic} date={m.date} />
+            return <Message key={`$list-message-${idx}`} message={m.message} isPublic={m.isPublic} date={m.date} />
         })
     }
 

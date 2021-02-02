@@ -10,7 +10,6 @@ import TypingField from '../TypingField'
 const useStyles = makeStyles({
     root: {
         margin: 'auto',
-
     }
 })
 

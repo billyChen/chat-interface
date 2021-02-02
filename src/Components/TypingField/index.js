@@ -65,6 +65,7 @@ const TypingField = () => {
             <FormControl fullWidth className={clsx(classes.margin, classes.textField)} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-message">Votre message</InputLabel>
                 <OutlinedInput
+                    data-testid="input-message"
                     id="outlined-adornment-message"
                     onChange={handleTextChange}
                     className={classes.inputText}
@@ -81,7 +82,7 @@ const TypingField = () => {
                     }
                 />
             </FormControl>
-            <Button onClick={handleSendMessage} className={clsx(classes.button, {
+            <Button id="submit-button" onClick={handleSendMessage} className={clsx(classes.button, {
                 [classes.isDisabled]: message.length === 0
             })} variant="contained">Envoyer</Button>
         </Box >
