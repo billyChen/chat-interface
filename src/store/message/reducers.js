@@ -22,7 +22,7 @@ const messagesSlice = createSlice({
         initMessage: {
             reducer(state, action) {
                 const { data } = action.payload
-                console.log('DATA', data)
+
                 state = [...data]
                 return state
             },

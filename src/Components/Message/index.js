@@ -1,5 +1,6 @@
 import React from 'react'
 import { format } from 'date-fns'
+import PropTypes from 'prop-types'
 
 // Material-ui
 import Box from '@material-ui/core/Box'
@@ -22,7 +23,7 @@ const useStyles = makeStyles({
     }
 })
 
-const Message = ({ message, isPublic, date }) => {
+const Message = ({ message, date, isPublic = true }) => {
 
     const classes = useStyles()
 
@@ -34,6 +35,12 @@ const Message = ({ message, isPublic, date }) => {
             </Box>
         </Box>
     )
+}
+
+Message.propTypes = {
+    message: PropTypes.string.isRequired,
+    date: PropTypes.number.isRequired,
+    isPublic: PropTypes.bool,
 }
 
 export default React.memo(Message)

@@ -44,8 +44,9 @@ const TypingField = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
 
+    // state
     const [message, setMessage] = useState('')
-    const [isPublic, setIsPublic] = useState('public')
+    const [isPublic, setIsPublic] = useState(true)
 
     const handleTextChange = (e) => {
         setMessage(e.target.value)
