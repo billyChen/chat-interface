@@ -8,6 +8,7 @@ Object {
       <div
         class="MuiBox-root MuiBox-root-3 makeStyles-root-1"
       >
+        abc
         <div
           class="MuiBox-root MuiBox-root-4 makeStyles-messageInfos-2"
         >
@@ -22,6 +23,7 @@ Object {
     <div
       class="MuiBox-root MuiBox-root-3 makeStyles-root-1"
     >
+      abc
       <div
         class="MuiBox-root MuiBox-root-4 makeStyles-messageInfos-2"
       >

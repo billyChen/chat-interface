@@ -1,9 +1,7 @@
 
 import React from 'react'
-import ReactTestUtils from 'react-dom/test-utils'
 import { Provider } from 'react-redux'
 import TypingField from '.'
-import { render, fireEvent, screen } from '../../store/test-utils'
 import configureStore from 'redux-mock-store'
 import renderer from 'react-test-renderer'
 
