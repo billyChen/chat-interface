@@ -19,12 +19,16 @@ const messagesSlice = createSlice({
                 return { payload: { message, isPublic } }
             }
         },
-        updateMessage: {
+        initMessage: {
             reducer(state, action) {
-
+                const { data } = action.payload
+                console.log('DATA', data)
+                state = [...data]
+                return state
             },
             prepare(params) {
-                return { payload: {} }
+                const { data } = params
+                return { payload: { data } }
             }
         },
         deleteMessage: {
@@ -38,6 +42,6 @@ const messagesSlice = createSlice({
     }
 })
 
-export const { addMessage } = messagesSlice.actions
+export const { addMessage, initMessage } = messagesSlice.actions
 
 export default messagesSlice.reducer

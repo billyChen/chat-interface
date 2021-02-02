@@ -1,5 +1,5 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 //Material-ui
 import Box from '@material-ui/core/Box'
@@ -15,6 +15,8 @@ import Message from '../Message'
 // Selectors
 import { getMessages } from '../../store/message/selectors'
 
+// Actions
+import { initMessage } from '../../store/message/reducers'
 
 const useStyles = makeStyles({
     root: {
@@ -25,9 +27,20 @@ const useStyles = makeStyles({
     }
 })
 
+const FAKE_DATA = [{
+    message: 'abc',
+    isPublic: true,
+    date: Date.now(),
+},
+{
+    message: 'def',
+    isPublic: false,
+    date: Date.now(),
+}]
 
 const MessagesWindow = () => {
     const classes = useStyles()
+    const dispatch = useDispatch()
 
     // Selectors
     const messages = useSelector(getMessages)
@@ -37,6 +50,14 @@ const MessagesWindow = () => {
             return <Message key={`$list-message-${idx}`} message={m.message} isPublic={m.isPublic} date={m.date} />
         })
     }
+
+    useEffect(() => {
+        // We call our api Here, and we dispatch our data to our store
+        // We fake an api call delay with settimeout
+        setTimeout(() => {
+            dispatch(initMessage({ data: FAKE_DATA }))
+        }, 1500)
+    }, [dispatch])
 
     return (
         <Paper elevation={2}>
